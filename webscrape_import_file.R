@@ -108,7 +108,10 @@ openpathways_totalwl <- National_Time_Series %>%
 # To calculate the previous number- difference
 ?lag()
 ?writeLines()
-
+gitcreds::gitcreds_set()                                                                                                                                
+read in save in  df 
+rm (df) # to save memory in r studio
+gitcreds::gitcreds_set()
 # Open pathways - Total wl - line plot
 ggplot(openpathways_totalwl,
 aes(x= Weekending, y =`Total Waiting List`))+
@@ -150,7 +153,6 @@ openpathways_long <-
          time_band !='Unknown Clock Start Date')
 ggplot (openpathways_long, aes(x = Weekending, y =pathways, colour = time_band)) +
           geom_line() 
-#+
+
   facet_wrap(~time_band)
 ggplotly()
-
